@@ -1,0 +1,43 @@
+{{> navbar}}
+<div class="container">
+   
+<div class="row mt-5">
+  <div class="col-6"><h5>CORE PATHS</h5></div>
+  <div class="col-6 justify-content-end">
+    <a href="/paths/addpath" type="button" class="btn btn-primary align-self-center mb-3">Add Path</a>
+  </div>
+</div>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Department Name</th>
+      <th scope="col">Department Description</th>
+      <th scope="col">Image</th>
+      <th>Action</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    {{#each rows}}
+    <tr>
+      <th scope="row">{{this.id}}</th>
+      <td>{{this.name}}</td>
+      <td>{{this.description}}</td>
+
+      <td>
+          <img class="img-fluid rounded-circle" src="/images/uploads/{{this.image}}" alt="">
+      </td>
+
+      <td class="text-end">
+          <a href="/paths/editPath/{{this.id}}" type="button" class="btn btn-light btn-small m-1"> <i class="fa fa-pencil">Edit</i></a>
+          <a href="/paths/deletePath/{{this.id}}" type="button" class="btn btn-light btn-small m-1"> <i class="fa fa-trash">Delete</i></a>
+      
+      </td>
+    </tr>
+    {{/each}}
+
+    
+  </tbody>
+</table>
+</div>

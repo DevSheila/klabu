@@ -1,0 +1,49 @@
+{{> navbar}}
+<div class="container">
+   
+
+   <div class="row mt-5">
+  <div class="col-6"><h5>LEADS</h5></div>
+  <div class="col-6 justify-content-end">
+    <a href="leads/addLead" type="button" class="btn btn-primary align-self-center mb-3">Add Lead</a>
+  </div>
+</div>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Lead Name</th>
+      <th scope="col"> Description</th>
+      <th scope="col">Path</th>
+      <th scope="col">Image</th>
+      <th scope="col">Year</th>
+      <th>Action</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    {{#each rows}}
+    <tr>
+      <th scope="row">{{this.id}}</th>
+      <td>{{this.name}}</td>
+      <td>{{this.description}}</td>
+       <td>{{this.path}}</td>
+
+       <td>
+          <img class="img-fluid rounded-circle" src="/images/uploads/{{this.image}}" alt="">
+      </td>
+      
+        <td>{{this.year}}</td>
+  
+
+      <td class="text-end">
+          <a href="leads/editLead/{{this.id}}" type="button" class="btn btn-light btn-small m-1"> <i class="fa fa-pencil">Edit</i></a>
+          <a href="leads/deleteLead/{{this.id}}" type="button" class="btn btn-light btn-small m-1"> <i class="fa fa-trash">Delete</i></a>
+      
+      </td>
+    </tr>
+    {{/each}}
+    
+  </tbody>
+</table>
+</div>

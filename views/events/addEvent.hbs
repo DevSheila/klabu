@@ -1,0 +1,23 @@
+{{> navbar}}
+<div class="container">
+   
+<nav class="mt-3 " aria-label="breadcrumb ">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item "><a href="/events">Events List</a></li>
+    <li class="breadcrumb-item active" aria-current="events/addLead">Add Event</li>
+  </ol>
+</nav>
+{{#if alert}}
+<div class="alert {{alertClass}} alert-dismissible fade show" role="alert">
+  {{alert }}
+  <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+{{/if}}
+
+<form action="/events/addEvent" enctype="multipart/form-data" class="row g-3 needs-validation" method="post" novalidate>
+   {{> eventForm}}
+  
+</form>
+</div>
